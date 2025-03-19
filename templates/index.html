@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+        <link rel="stylesheet" href="/static/css/style.css"/>
+        <title>Idea Generator</title>
+    </head>
+    <body>
+        <h1 class="index-title">Idea Generator</h1>
+        <form class="login-img" method ="POST"> 
+            <button type="submit" name="img_click" value="True">
+                <img src="/static/img/user-img.png" class="login-button-index">
+            </button>
+        </form>
+            <div class="idea_gen_part">
+                <form class="button" method="POST">
+                    <input class="button" type="submit" name='button' value="Generate">
+                </form>
+                {% if button %}
+                <p class="idea_part">{{ random_idea }}</p>
+                {% else %}
+                <p class="idea_part">No ideas generated yet!</p>
+                {% endif %}
+            </div>   
+    </body>
+</html>

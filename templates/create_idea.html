@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <link rel="stylesheet" href="/static/css/style.css">
+        <title>Create an idea</title>
+    </head>
+    <body>
+        <h1>Create an idea</h1>
+        <p>Add your own idea so others can benefit</p>
+        <form method="POST" action="{{ url_for('create_idea') }}">
+            <input type="text" id="idea" name="idea" placeholder="Enter your idea">
+            <button type="submit">Submit</button>
+        </form>
+
+        <h2>Your Ideas</h2>
+        <ul>
+            {% for idea in ideas %}
+                <li>
+                    {{ idea.idea_text }}
+                    <form method="POST" action="{{ url_for('delete_idea', idea_id=idea.id) }}" style="display:inline;">
+                        <button type="submit">Delete</button>
+                    </form>
+                </li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>

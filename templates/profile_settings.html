@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <link rel="stylesheet" href="/static/css/style.css">
+        <title>Settings</title>
+    </head>
+    <body>
+        <h1>Profile Settings</h1>
+        {% if user %}
+            <p>Email: {{ user.email }}</p>
+            <p>Password: {{ user.password }}</p>
+        {% else %}
+            <p>No user information available.</p>
+        {% endif %}
+        <form method="POST">
+            <button class="delete_user" type="submit" name="delete" value="delete">Delete account</button>
+            <button type="submit" name="list" value="list">List users</button>
+            <p>{{ error }}</p>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <link rel="stylesheet" href="/static/css/style.css">
+        <title>Login</title>
+    </head>
+    <body>
+        <form class="login" method="POST">        
+            <input class="form__input" type="email" name="email" id="email" placeholder="Enter your e-mail" required>
+            <input class="form__input" type="password" name="password" id="password" placeholder="Enter your password" required>
+            <p class="error">{{error}}</p>
+            <button class="login_button" type="submit">Login</button>
+            <a href="/register" class="register-link">Register</a>
+        </form>
+    </body>
+</html>

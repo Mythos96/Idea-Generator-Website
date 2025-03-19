@@ -1,0 +1,65 @@
+body{
+    background-color: #928763;
+}
+
+.index-title {
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 60px;
+    text-align: center;
+    color: #efcf6d;
+    width: 400px;
+    height: 60px;
+    margin: auto;
+    padding: auto;
+    padding-top: 40px;
+    line-height: 56px;
+    cursor: default;
+}
+
+.idea_part {
+    color: #efcf6d;
+    background-color: #95885e;
+    border-radius: 20px;
+    border-color: #b6a675;
+    border-style: solid;
+    border-width: 3px 3px 3px 3px;
+    width: 800px;
+    height: 40px;
+    position: absolute;
+    top: 33.8%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 26px;
+}
+
+.button {
+    position: absolute;
+    top: 37%;
+    left: 76%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 165px;
+    height: 45px;
+    padding-bottom: 3px;
+    font-size: 36px;
+    background-color: #95885e;
+    cursor: pointer;
+    color: #efcf6d;
+    border-color: #b6a675;
+    border-radius: 20px;
+    font-family: inherit;
+    text-align: center;
+    font-weight: 500;
+}
+
+.button :hover {
+    color: #b6a675;
+    transition: color 0.6s ease-in-out;
+}
+
+.button :active {
+    color: #efcf6d;
+    transition: color 0s ease-in-out
+}
