@@ -30,8 +30,6 @@ class Idea(db.Model):
 def index():
     button = request.form.get('button')
     img_click = request.form.get('img_click')
-
-
     if img_click == 'True':
         return redirect('/login')
 
@@ -98,11 +96,14 @@ def profile_settings():
             error = 'You do not have permission to view this page'
             return render_template('profile_settings.html', error=error)
     
-    if delete_account == 'delete':
+    if delete_account == 'delete' and user_id != 0:
         db.session.delete(user)
         db.session.commit()
         session.pop('user_id', None)
         return redirect('/')
+    elif user_id == 0 and delete_account == 'delete':
+        error = "You can't delete your account due to you are the admin"
+        return render_template('profile_settings.html', error=error)
 
     return render_template("profile_settings.html", user=user)
 
@@ -132,7 +133,7 @@ def create_idea():
 
 @app.route('/delete_idea/<int:idea_id>', methods=['POST'])
 def delete_idea(idea_id):
-    idea = Idea.query.get_or_404(idea_id)
+    idea = Idea.query.get(idea_id)
     if idea.user_id == session['user_id']:
         db.session.delete(idea)
         db.session.commit()
