@@ -31,10 +31,6 @@ def index():
     button = request.form.get('button')
     img_click = request.form.get('img_click')
 
-    db.create_all()
-    admin_user = User(id=0, email='admin@gmail.com', password='admin')
-    db.session.add(admin_user)
-    db.session.commit()
 
     if img_click == 'True':
         return redirect('/login')
