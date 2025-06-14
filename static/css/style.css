@@ -63,3 +63,10 @@ body{
     color: #efcf6d;
     transition: color 0s ease-in-out
 }
+
+.login-button-index {
+    width: 150px;
+    height: 150px;
+    border: none;
+    display: block;
+}
